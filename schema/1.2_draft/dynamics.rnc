@@ -1,0 +1,81 @@
+default namespace = "http://www.gexf.net/1.2draft"
+namespace       a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace     rng = "http://relaxng.org/ns/structure/1.0"
+datatypes     xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+
+## Note: dynamic weight can be obtained by using the reserved title "weight" in attributes
+
+
+# extension point
+graph-content &=
+    attribute timeformat { timeformat-type }?
+  & (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+
+# extension point
+attributes-content &= (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+
+# extension point
+attvalue-content &= (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+
+# extension point
+node-content &= (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# extension point
+edge-content &= (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# new point
+spells-content =
+    element spell { spell-content }+
+
+# new point
+spell-content = (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+
+# new datatype
+time-type = 
+    xsd:integer | xsd:double | xsd:date | xsd:dateTime
+
+# new datatype
+timeformat-type = [ a:defaultValue = "double" ] 
+    string "integer" |
+    string "double" |
+    string "date" |
+    string "dateTime"

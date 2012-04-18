@@ -1,0 +1,130 @@
+default namespace = inherit
+namespace       a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace     rng = "http://relaxng.org/ns/structure/1.0"
+datatypes     xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+# extension point
+node-content &=
+    element color { color-content }?
+  & element position { position-content }?
+  & element size { size-content }?
+  & element shape { node-shape-content }?
+
+# extension point
+edge-content &=
+    element color { color-content }?
+  & element thickness { thickness-content }?
+  & element shape { edge-shape-content }?
+
+# new point
+color-content =
+    attribute r { color-channel }
+  & attribute g { color-channel }
+  & attribute b { color-channel }
+  & attribute a { alpha-channel }?
+  & (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# new point
+position-content =
+    attribute x { space-point }
+  & attribute y { space-point }
+  & attribute z { space-point }
+  & (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# new point
+size-content =
+    attribute value { size-type }
+  & (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# new point
+thickness-content =
+    attribute value { thickness-type }
+  & (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# new point
+node-shape-content =
+    attribute value { node-shape-type }
+  & attribute uri { xsd:anyURI }?
+  & (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# new point
+edge-shape-content =
+    attribute value { edge-shape-type }
+  & (
+      ( attribute start { time-type }?
+      | attribute startopen { time-type }?)
+      & 
+      ( attribute end { time-type }?
+      & attribute endopen { time-type }?)
+  )
+  & element spells { spells-content }?
+
+# new datatype
+color-channel = 
+    xsd:nonNegativeInteger { maxInclusive = "255" }
+
+# new datatype
+alpha-channel = [ a:defaultValue = "1.0" ] 
+    xsd:float { minInclusive = "0.0" maxInclusive = "1.0" }
+
+# new datatype
+size-type = [ a:defaultValue = "1.0" ] 
+    xsd:float { minInclusive = "0.0"}
+
+# new datatype
+thickness-type = [ a:defaultValue = "1.0" ] 
+    xsd:float { minInclusive = "0.0"}
+
+# new datatype
+node-shape-type =  [ a:defaultValue = "disc" ] 
+    string "disc" |
+    string "square" |
+    string "triangle" |
+    string "diamond" |
+    string "image"
+
+# new datatype
+edge-shape-type =  [ a:defaultValue = "solid" ] 
+    string "solid" |
+    string "dotted" |
+    string "dashed" |
+    string "double"
+
+# new datatype
+space-point = 
+    xsd:float

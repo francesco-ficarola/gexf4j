@@ -1,0 +1,11 @@
+default namespace = "http://www.gexf.net/1.2draft"
+namespace       a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace     rng = "http://relaxng.org/ns/structure/1.0"
+datatypes     xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+
+# extension point
+node-content &=
+    attribute pid { id-type }?
+  & element nodes { nodes-content }?
+  & element edges { edges-content }?

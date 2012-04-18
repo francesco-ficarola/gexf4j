@@ -1,0 +1,58 @@
+default namespace = "http://www.gexf.net/1.2draft"
+namespace       a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace     rng = "http://relaxng.org/ns/structure/1.0"
+datatypes     xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+
+# extension point
+graph-content &=
+    element attributes { attributes-content }*
+
+# extension point
+node-content &=
+    element attvalues { attvalues-content }?
+
+# extension point
+edge-content &=
+    element attvalues { attvalues-content }?
+
+
+# new point
+attributes-content =
+    attribute class { class-type }
+  & attribute mode { mode-type }?
+  & element attribute { attribute-content }*
+
+# new point
+attribute-content =
+    attribute id { id-type }
+  & attribute title { xsd:string }
+  & attribute type { attrtype-type }
+  & element default { text }?
+  & element options { text }?
+
+# new point
+attvalues-content =
+    element attvalue { attvalue-content }*
+
+# new point
+attvalue-content =
+    attribute for { id-type }
+  & attribute value { xsd:string }
+
+
+# new datatype
+attrtype-type =
+    string "integer" | 
+    string "long" | 
+    string "double" | 
+    string "float" | 
+    string "boolean" | 
+    string "liststring" | 
+    string "string" |
+    string "anyURI"
+
+# new datatype
+class-type =  
+    string "node" | 
+    string "edge" 

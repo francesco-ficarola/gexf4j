@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.gexf.net/1.2draft" xmlns="http://relaxng.org/ns/structure/1.0">
+  <!-- extension point -->
+  <define name="node-content" combine="interleave">
+    <interleave>
+      <optional>
+        <attribute name="pid">
+          <ref name="id-type"/>
+        </attribute>
+      </optional>
+      <optional>
+        <element name="nodes">
+          <ref name="nodes-content"/>
+        </element>
+      </optional>
+      <optional>
+        <element name="edges">
+          <ref name="edges-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+</grammar>

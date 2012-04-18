@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.gexf.net/1.2draft" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <!-- extension point -->
+  <define name="graph-content" combine="interleave">
+    <zeroOrMore>
+      <element name="attributes">
+        <ref name="attributes-content"/>
+      </element>
+    </zeroOrMore>
+  </define>
+  <!-- extension point -->
+  <define name="node-content" combine="interleave">
+    <optional>
+      <element name="attvalues">
+        <ref name="attvalues-content"/>
+      </element>
+    </optional>
+  </define>
+  <!-- extension point -->
+  <define name="edge-content" combine="interleave">
+    <optional>
+      <element name="attvalues">
+        <ref name="attvalues-content"/>
+      </element>
+    </optional>
+  </define>
+  <!-- new point -->
+  <define name="attributes-content">
+    <interleave>
+      <attribute name="class">
+        <ref name="class-type"/>
+      </attribute>
+      <optional>
+        <attribute name="mode">
+          <ref name="mode-type"/>
+        </attribute>
+      </optional>
+      <zeroOrMore>
+        <element name="attribute">
+          <ref name="attribute-content"/>
+        </element>
+      </zeroOrMore>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="attribute-content">
+    <interleave>
+      <attribute name="id">
+        <ref name="id-type"/>
+      </attribute>
+      <attribute name="title">
+        <data type="string"/>
+      </attribute>
+      <attribute name="type">
+        <ref name="attrtype-type"/>
+      </attribute>
+      <optional>
+        <element name="default">
+          <text/>
+        </element>
+      </optional>
+      <optional>
+        <element name="options">
+          <text/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="attvalues-content">
+    <zeroOrMore>
+      <element name="attvalue">
+        <ref name="attvalue-content"/>
+      </element>
+    </zeroOrMore>
+  </define>
+  <!-- new point -->
+  <define name="attvalue-content">
+    <interleave>
+      <attribute name="for">
+        <ref name="id-type"/>
+      </attribute>
+      <attribute name="value">
+        <data type="string"/>
+      </attribute>
+    </interleave>
+  </define>
+  <!-- new datatype -->
+  <define name="attrtype-type">
+    <choice>
+      <value type="string" datatypeLibrary="">integer</value>
+      <value type="string" datatypeLibrary="">long</value>
+      <value type="string" datatypeLibrary="">double</value>
+      <value type="string" datatypeLibrary="">float</value>
+      <value type="string" datatypeLibrary="">boolean</value>
+      <value type="string" datatypeLibrary="">liststring</value>
+      <value type="string" datatypeLibrary="">string</value>
+      <value type="string" datatypeLibrary="">anyURI</value>
+    </choice>
+  </define>
+  <!-- new datatype -->
+  <define name="class-type">
+    <choice>
+      <value type="string" datatypeLibrary="">node</value>
+      <value type="string" datatypeLibrary="">edge</value>
+    </choice>
+  </define>
+</grammar>

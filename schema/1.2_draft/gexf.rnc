@@ -1,0 +1,89 @@
+default namespace = "http://www.gexf.net/1.2draft"
+namespace     viz = "http://www.gexf.net/1.2draft/viz"
+namespace       a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace     rng = "http://relaxng.org/ns/structure/1.0"
+datatypes     xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+## Libraries
+
+include "data.rnc"
+include "dynamics.rnc"
+include "hierarchy.rnc"
+include "phylogenics.rnc"
+include "viz.rnc" inherit = viz
+
+
+## Grammar root
+
+start = element gexf { gexf-content }
+
+
+## Tree
+
+gexf-content = 
+    attribute version { string "1.2" }
+  & attribute variant { xsd:string }?
+  & (element meta { meta-content }?
+  ,  element graph { graph-content })
+
+meta-content =
+    attribute lastmodifieddate { xsd:date }?
+  & element creator { text }?
+  & element keywords { text }?
+  & element description { text }?
+
+graph-content =
+    attribute defaultedgetype { defaultedgetype-type }?
+  & attribute idtype { idtype-type }?
+  & attribute mode { mode-type }?
+  & (element nodes { nodes-content }
+  ,  element edges { edges-content })
+
+nodes-content =
+    attribute count { xsd:nonNegativeInteger }?
+  & element node { node-content }*
+
+edges-content =
+    attribute count { xsd:nonNegativeInteger }?
+  & element edge { edge-content }*
+
+node-content =
+    attribute id { id-type }
+  & attribute label { xsd:token }?
+
+edge-content =
+    attribute id { id-type }
+  & attribute type { edgetype-type }?
+  & attribute label { xsd:token }?
+  & attribute source { id-type }
+  & attribute target { id-type }
+  & attribute weight { weight-type }?
+
+
+
+## Datatypes
+
+defaultedgetype-type = [ a:defaultValue = "undirected" ] 
+    string "directed" | 
+    string "undirected" | 
+    string "mutual"
+
+edgetype-type = [ a:defaultValue = "undirected" ] 
+    string "directed" | 
+    string "undirected" | 
+    string "mutual"
+
+id-type = 
+    xsd:string | xsd:integer
+
+idtype-type = [ a:defaultValue = "string" ] 
+    string "integer" |
+    string "string"
+
+mode-type = [ a:defaultValue = "static" ] 
+    string "static" | 
+    string "dynamic" 
+
+weight-type = [ a:defaultValue = "1.0" ] 
+    xsd:float
+

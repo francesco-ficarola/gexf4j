@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.gexf.net/1.2draft" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <!-- extension point -->
+  <define name="graph-content" combine="interleave">
+    <a:documentation>Note: dynamic weight can be obtained by using the reserved title "weight" in attributes</a:documentation>
+    <interleave>
+      <optional>
+        <attribute name="timeformat">
+          <ref name="timeformat-type"/>
+        </attribute>
+      </optional>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+    </interleave>
+  </define>
+  <!-- extension point -->
+  <define name="attributes-content" combine="interleave">
+    <interleave>
+      <choice>
+        <optional>
+          <attribute name="start">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="startopen">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+      </choice>
+      <interleave>
+        <optional>
+          <attribute name="end">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="endopen">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+      </interleave>
+    </interleave>
+  </define>
+  <!-- extension point -->
+  <define name="attvalue-content" combine="interleave">
+    <interleave>
+      <choice>
+        <optional>
+          <attribute name="start">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="startopen">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+      </choice>
+      <interleave>
+        <optional>
+          <attribute name="end">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="endopen">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+      </interleave>
+    </interleave>
+  </define>
+  <!-- extension point -->
+  <define name="node-content" combine="interleave">
+    <interleave>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- extension point -->
+  <define name="edge-content" combine="interleave">
+    <interleave>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="spells-content">
+    <oneOrMore>
+      <element name="spell">
+        <ref name="spell-content"/>
+      </element>
+    </oneOrMore>
+  </define>
+  <!-- new point -->
+  <define name="spell-content">
+    <interleave>
+      <choice>
+        <optional>
+          <attribute name="start">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="startopen">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+      </choice>
+      <interleave>
+        <optional>
+          <attribute name="end">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+        <optional>
+          <attribute name="endopen">
+            <ref name="time-type"/>
+          </attribute>
+        </optional>
+      </interleave>
+    </interleave>
+  </define>
+  <!-- new datatype -->
+  <define name="time-type">
+    <choice>
+      <data type="integer"/>
+      <data type="double"/>
+      <data type="date"/>
+      <data type="dateTime"/>
+    </choice>
+  </define>
+  <!-- new datatype -->
+  <define name="timeformat-type">
+    <choice>
+      <value type="string" datatypeLibrary="" a:defaultValue="double">integer</value>
+      <value type="string" datatypeLibrary="">double</value>
+      <value type="string" datatypeLibrary="">date</value>
+      <value type="string" datatypeLibrary="">dateTime</value>
+    </choice>
+  </define>
+</grammar>

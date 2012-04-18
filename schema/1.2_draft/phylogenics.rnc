@@ -1,0 +1,17 @@
+default namespace = "http://www.gexf.net/1.2draft"
+namespace       a = "http://relaxng.org/ns/compatibility/annotations/1.0"
+namespace     rng = "http://relaxng.org/ns/structure/1.0"
+datatypes     xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+
+# extension point
+node-content &=
+    element parents { parents-content }?
+
+# new point
+parents-content =
+    element parent { parent-content }*
+
+# new point
+parent-content =
+    attribute for { id-type }

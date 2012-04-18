@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <!-- extension point -->
+  <define name="node-content" combine="interleave">
+    <interleave>
+      <optional>
+        <element name="color">
+          <ref name="color-content"/>
+        </element>
+      </optional>
+      <optional>
+        <element name="position">
+          <ref name="position-content"/>
+        </element>
+      </optional>
+      <optional>
+        <element name="size">
+          <ref name="size-content"/>
+        </element>
+      </optional>
+      <optional>
+        <element name="shape">
+          <ref name="node-shape-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- extension point -->
+  <define name="edge-content" combine="interleave">
+    <interleave>
+      <optional>
+        <element name="color">
+          <ref name="color-content"/>
+        </element>
+      </optional>
+      <optional>
+        <element name="thickness">
+          <ref name="thickness-content"/>
+        </element>
+      </optional>
+      <optional>
+        <element name="shape">
+          <ref name="edge-shape-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="color-content">
+    <interleave>
+      <attribute name="r">
+        <ref name="color-channel"/>
+      </attribute>
+      <attribute name="g">
+        <ref name="color-channel"/>
+      </attribute>
+      <attribute name="b">
+        <ref name="color-channel"/>
+      </attribute>
+      <optional>
+        <attribute name="a">
+          <ref name="alpha-channel"/>
+        </attribute>
+      </optional>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="position-content">
+    <interleave>
+      <attribute name="x">
+        <ref name="space-point"/>
+      </attribute>
+      <attribute name="y">
+        <ref name="space-point"/>
+      </attribute>
+      <attribute name="z">
+        <ref name="space-point"/>
+      </attribute>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="size-content">
+    <interleave>
+      <attribute name="value">
+        <ref name="size-type"/>
+      </attribute>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="thickness-content">
+    <interleave>
+      <attribute name="value">
+        <ref name="thickness-type"/>
+      </attribute>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="node-shape-content">
+    <interleave>
+      <attribute name="value">
+        <ref name="node-shape-type"/>
+      </attribute>
+      <optional>
+        <attribute name="uri">
+          <data type="anyURI"/>
+        </attribute>
+      </optional>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new point -->
+  <define name="edge-shape-content">
+    <interleave>
+      <attribute name="value">
+        <ref name="edge-shape-type"/>
+      </attribute>
+      <interleave>
+        <choice>
+          <optional>
+            <attribute name="start">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="startopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </choice>
+        <interleave>
+          <optional>
+            <attribute name="end">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+          <optional>
+            <attribute name="endopen">
+              <ref name="time-type"/>
+            </attribute>
+          </optional>
+        </interleave>
+      </interleave>
+      <optional>
+        <element name="spells">
+          <ref name="spells-content"/>
+        </element>
+      </optional>
+    </interleave>
+  </define>
+  <!-- new datatype -->
+  <define name="color-channel">
+    <data type="nonNegativeInteger">
+      <param name="maxInclusive">255</param>
+    </data>
+  </define>
+  <!-- new datatype -->
+  <define name="alpha-channel">
+    <data type="float" a:defaultValue="1.0">
+      <param name="minInclusive">0.0</param>
+      <param name="maxInclusive">1.0</param>
+    </data>
+  </define>
+  <!-- new datatype -->
+  <define name="size-type">
+    <data type="float" a:defaultValue="1.0">
+      <param name="minInclusive">0.0</param>
+    </data>
+  </define>
+  <!-- new datatype -->
+  <define name="thickness-type">
+    <data type="float" a:defaultValue="1.0">
+      <param name="minInclusive">0.0</param>
+    </data>
+  </define>
+  <!-- new datatype -->
+  <define name="node-shape-type">
+    <choice>
+      <value type="string" datatypeLibrary="" a:defaultValue="disc">disc</value>
+      <value type="string" datatypeLibrary="">square</value>
+      <value type="string" datatypeLibrary="">triangle</value>
+      <value type="string" datatypeLibrary="">diamond</value>
+      <value type="string" datatypeLibrary="">image</value>
+    </choice>
+  </define>
+  <!-- new datatype -->
+  <define name="edge-shape-type">
+    <choice>
+      <value type="string" datatypeLibrary="" a:defaultValue="solid">solid</value>
+      <value type="string" datatypeLibrary="">dotted</value>
+      <value type="string" datatypeLibrary="">dashed</value>
+      <value type="string" datatypeLibrary="">double</value>
+    </choice>
+  </define>
+  <!-- new datatype -->
+  <define name="space-point">
+    <data type="float"/>
+  </define>
+</grammar>

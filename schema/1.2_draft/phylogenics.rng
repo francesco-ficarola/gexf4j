@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="http://www.gexf.net/1.2draft" xmlns="http://relaxng.org/ns/structure/1.0">
+  <!-- extension point -->
+  <define name="node-content" combine="interleave">
+    <optional>
+      <element name="parents">
+        <ref name="parents-content"/>
+      </element>
+    </optional>
+  </define>
+  <!-- new point -->
+  <define name="parents-content">
+    <zeroOrMore>
+      <element name="parent">
+        <ref name="parent-content"/>
+      </element>
+    </zeroOrMore>
+  </define>
+  <!-- new point -->
+  <define name="parent-content">
+    <attribute name="for">
+      <ref name="id-type"/>
+    </attribute>
+  </define>
+</grammar>
