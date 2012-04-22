@@ -23,7 +23,7 @@ Version 0.3.0 - ALPHA (by Francesco Ficarola)
 The following changes were applied:
 
 * "timetype" attribute is renamed to "timeformat"
-* <slices> and "slice" are renamed <spells> and "spell" correspondingly
+* "slices" and "slice" are renamed "spells" and "spell" correspondingly
 * Now the "timeformat" can be integer, double (default), date, dateTime
 * Open intervals (non-inclusive) are added: "startopen" and "endopen" attributes
 * Bug fix on some "Attribute setTitle(String title)" method: the expression in checkArgument was wrong
