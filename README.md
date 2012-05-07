@@ -24,6 +24,8 @@ The following changes were applied:
 
 * Javadoc was added
 * Bug fix for the not-inclusion of the timeformat attribute in static graphs
+* Smart names for the method parameters
+* Two examples about static and dynamic graphs have been added (package "it.uniroma1.dis.wiserver.gexf4j.examples")
 
 Version 0.3.0 - ALPHA (by Francesco Ficarola)
 ------------------
