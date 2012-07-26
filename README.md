@@ -73,6 +73,6 @@ Sample Code
 ------------------
 In the following examples you can learn how to build a GEXF graph by the gexf4j library:
 
-* [A static graph](https://github.com/downloads/francesco-ficarola/gexf4j/static_graph_sample.gexf)
+* The [StaticGexfGraph.java](https://github.com/francesco-ficarola/gexf4j/blob/master/src/examples/java/it/uniroma1/dis/wiserver/gexf4j/examples/StaticGexfGraph.java) produces [this static graph](https://github.com/downloads/francesco-ficarola/gexf4j/static_graph_sample.gexf)
 
-* [A dynamic graph](https://github.com/downloads/francesco-ficarola/gexf4j/dynamic_graph_sample.gexf)
+* The [DynamicGexfGraph.java](https://github.com/francesco-ficarola/gexf4j/blob/master/src/examples/java/it/uniroma1/dis/wiserver/gexf4j/examples/DynamicGexfGraph.java) produces [this dynamic graph](https://github.com/downloads/francesco-ficarola/gexf4j/dynamic_graph_sample.gexf)
