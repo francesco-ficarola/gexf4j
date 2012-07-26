@@ -1,7 +1,7 @@
 package it.uniroma1.dis.wiserver.gexf4j.core;
 
 import java.io.IOException;
-import java.io.OutputStream;
+import java.io.Writer;
 
 /**
  * Interface for the GexfWriter tool.
@@ -15,5 +15,5 @@ public interface GexfWriter {
 	 * @param out the OutputStream of the output file
 	 * @throws IOException
 	 */
-	void writeToStream(Gexf gexf, OutputStream out) throws IOException;
+	void writeToStream(Gexf gexf, Writer out, String encoding) throws IOException;
 }
