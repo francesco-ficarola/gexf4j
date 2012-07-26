@@ -14,8 +14,9 @@ import it.uniroma1.dis.wiserver.gexf4j.core.impl.StaxGraphWriter;
 import it.uniroma1.dis.wiserver.gexf4j.core.impl.data.AttributeListImpl;
 
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.Calendar;
 
 
@@ -79,10 +80,10 @@ public class StaticGexfGraph {
 
 		StaxGraphWriter graphWriter = new StaxGraphWriter();
 		File f = new File("static_graph_sample.gexf");
-		FileOutputStream fos;
+		Writer out;
 		try {
-			fos = new FileOutputStream(f, false);
-			graphWriter.writeToStream(gexf, fos);
+			out =  new FileWriter(f, false);
+			graphWriter.writeToStream(gexf, out, "UTF-8");
 			System.out.println(f.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
