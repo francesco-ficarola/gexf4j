@@ -62,8 +62,13 @@ Installing
 ------------------
 You have two options:
 
-1. Download the latest version of the JAR file from the [download page](https://github.com/francesco-ficarola/gexf4j/downloads)
-2. Download the source, and compile/install using maven2 (mvn clean && mvn package)
+1. (Recommended) Clone the repository and compile/install using maven2:
+
+	$ git clone https://github.com/francesco-ficarola/gexf4j.git
+
+	$ mvn clean package
+
+2. Download the latest version of the JAR file from the [download page](https://github.com/francesco-ficarola/gexf4j/downloads)
 
 Dependecies
 ------------------
