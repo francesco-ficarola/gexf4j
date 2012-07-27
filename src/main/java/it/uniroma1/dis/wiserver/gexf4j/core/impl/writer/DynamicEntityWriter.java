@@ -63,7 +63,7 @@ public abstract class DynamicEntityWriter<T extends Dynamic<?>> extends Abstract
 		/** integer timeformat */
 		if(AbstractEntityWriter.writerTimeType.equals(TimeFormat.INTEGER)) {
 			if (entity.hasStartDate()) {
-				String startValue = AbstractEntityWriter.toInteger(entity.getStartValue());
+				String startValue = toInteger(entity.getStartValue());
 				checkArgument(startValue != null,
 						entity.getClass().getName() + ": " +
 						"For timeformat \"integer\" please enter a Integer object.");
@@ -71,7 +71,7 @@ public abstract class DynamicEntityWriter<T extends Dynamic<?>> extends Abstract
 			}
 			
 			if (entity.hasEndDate()) {
-				String endValue = AbstractEntityWriter.toInteger(entity.getEndValue());
+				String endValue = toInteger(entity.getEndValue());
 				checkArgument(endValue != null,
 						entity.getClass().getName() + ": " +
 						"For timeformat \"integer\" please enter a Integer object.");
@@ -81,7 +81,7 @@ public abstract class DynamicEntityWriter<T extends Dynamic<?>> extends Abstract
 		/** date timeformat */
 		if(AbstractEntityWriter.writerTimeType.equals(TimeFormat.DATE)) {
 			if (entity.hasStartDate()) {
-				String startValue = AbstractEntityWriter.toDateString(entity.getStartValue());
+				String startValue = toDateString(entity.getStartValue());
 				checkArgument(startValue != null,
 						entity.getClass().getName() + ": " +
 						"For timeformat \"date\" please enter a Date object.");
@@ -89,7 +89,7 @@ public abstract class DynamicEntityWriter<T extends Dynamic<?>> extends Abstract
 			}
 			
 			if (entity.hasEndDate()) {
-				String endValue = AbstractEntityWriter.toDateString(entity.getEndValue());
+				String endValue = toDateString(entity.getEndValue());
 				checkArgument(endValue != null,
 						entity.getClass().getName() + ": " +
 						"For timeformat \"date\" please enter a Date object.");
@@ -99,7 +99,7 @@ public abstract class DynamicEntityWriter<T extends Dynamic<?>> extends Abstract
 		/** dateTime timeformat */
 		if(AbstractEntityWriter.writerTimeType.equals(TimeFormat.XSDDATETIME)) {
 			if (entity.hasStartDate()) {
-				String startValue = AbstractEntityWriter.toDateTimeString(entity.getStartValue());
+				String startValue = toDateTimeString(entity.getStartValue());
 				checkArgument(startValue != null,
 						entity.getClass().getName() + ": " +
 						"For timeformat \"date\" please enter a Date object.");
@@ -107,7 +107,7 @@ public abstract class DynamicEntityWriter<T extends Dynamic<?>> extends Abstract
 			}
 			
 			if (entity.hasEndDate()) {
-				String endValue = AbstractEntityWriter.toDateTimeString(entity.getEndValue());
+				String endValue = toDateTimeString(entity.getEndValue());
 				checkArgument(endValue != null,
 						entity.getClass().getName() + ": " +
 						"For timeformat \"date\" please enter a Date object.");
