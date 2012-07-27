@@ -1,7 +1,7 @@
 gexf4j - A java library for the GEXF file format
 =================
 
-Latest Version: [0.3.2-ALPHA](http://github.com/francesco-ficarola/gexf4j)
+Latest Version: [0.4.0-BETA](http://github.com/francesco-ficarola/gexf4j)
 
 About
 ------------------
@@ -17,6 +17,19 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Version 0.4.0 - BETA (pull request by dankeris)
+------------------
+The following changes have been applied:
+
+* Unit tests have been included
+* STAX impementation has been changed from JDK default to woodstox
+* Stream writing has been added for convenience
+
+Additional changes:
+
+* SimpleDateFormat variables are now safe for multi-threading
+* Javadoc has been updated
 
 Version 0.3.2 - ALPHA (pull request by dankeris)
 ------------------
@@ -72,7 +85,13 @@ You have two options:
 
 Dependecies
 ------------------
-Gexf4j library needs [com.google.common.base.Preconditions](http://code.google.com/p/guava-libraries/). You can find a version of that library in the lib directory, too.
+If you have downloaded the gexf4j JAR file, then you need some dependencies:
+
+* [guava](http://code.google.com/p/guava-libraries/)
+* [woodstox](http://wiki.fasterxml.com/WoodstoxDownload)
+* [stax](http://www.jarvana.com/jarvana/archive-details/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar)
+
+Otherwise, if you have cloned the respository and have builded the gexf4j library by Maven, then you can find a "ready-to-use" version of those libraries in the lib directory.
 
 Sample Code
 ------------------

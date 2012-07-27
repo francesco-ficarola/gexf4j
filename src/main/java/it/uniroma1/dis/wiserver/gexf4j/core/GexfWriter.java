@@ -2,7 +2,6 @@ package it.uniroma1.dis.wiserver.gexf4j.core;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.Writer;
 
 /**
@@ -16,6 +15,7 @@ public interface GexfWriter {
      *
      * @param gexf the current object of the GEXF file
      * @param out the OutputStream of the output file
+     * @param encoding the encoding of the output file, e.g. UTF-8
      * @throws IOException
      */
     void writeToStream(Gexf gexf, Writer out, String encoding) throws IOException;
@@ -27,6 +27,7 @@ public interface GexfWriter {
      *
      * @param gexf the current object of the GEXF file
      * @param out the OutputStream of the output file
+     * @param encoding the encoding of the output file, e.g. UTF-8
      * @throws IOException
      */
     void writeToStream(Gexf gexf, OutputStream out, String encoding) throws IOException;

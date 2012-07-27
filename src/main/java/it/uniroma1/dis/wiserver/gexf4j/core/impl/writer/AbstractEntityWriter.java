@@ -12,16 +12,6 @@ import javax.xml.stream.XMLStreamWriter;
 
 public abstract class AbstractEntityWriter<T extends Object> {
 
-    /*
-     * These (SimpleDateFormat) should not be static as they are not thread safe
-     *
-     * Date formats are not synchronized. It is recommended to create separate 
-     * format instances for each thread. If multiple threads access a format concurrently, 
-     * it must be synchronized externally.
-     * http://docs.oracle.com/javase/1.4.2/docs/api/java/text/SimpleDateFormat.html
-     */
-    private final SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd");
-    private final SimpleDateFormat sdfDateTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
     protected static String writerTimeType = TimeFormat.DOUBLE;
 
     protected static String toDouble(Object number) {
@@ -45,6 +35,7 @@ public abstract class AbstractEntityWriter<T extends Object> {
     protected String toDateString(Object date) {
         String returnValue = null;
         if (date instanceof Date) {
+        	SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd");
             Date d = (Date) date;
             returnValue = sdfDate.format(d);
         }
@@ -54,6 +45,7 @@ public abstract class AbstractEntityWriter<T extends Object> {
     protected String toDateTimeString(Object date) {
         String returnValue = null;
         if (date instanceof Date) {
+        	SimpleDateFormat sdfDateTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
             Date d = (Date) date;
             returnValue = sdfDateTime.format(d);
         }
