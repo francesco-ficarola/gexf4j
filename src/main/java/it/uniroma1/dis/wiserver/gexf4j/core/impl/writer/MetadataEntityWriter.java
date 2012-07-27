@@ -31,7 +31,7 @@ public class MetadataEntityWriter extends AbstractEntityWriter<Metadata> {
 		if (entity.hasLastModified()) {
 			writer.writeAttribute(
 					ATTRIB_LASTMODIFIED,
-					AbstractEntityWriter.toDateString(entity.getLastModified()));
+					toDateString(entity.getLastModified()));
 		}
 	}
 
