@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2">
+	<meta lastmodifieddate="2012-05-02">
+		<creator>Gephi.org</creator>
+		<description>LONG utf string ĄČĘĖĮŠŲŪ() ąčęėįšųū90</description>
+	</meta>
+	<graph defaultedgetype="undirected" idtype="string" mode="static">
+		<attributes class="node" mode="static">
+			<attribute id="0" title="someThing" type="string"/>
+		</attributes>
+		<nodes count="2">
+			<node id="0" label="Tadas Šubonis">
+				<attvalues>
+					<attvalue for="0" value="Some string"/>
+				</attvalues>
+			</node>
+			<node id="1" label="ąččėęįųšū">
+				<attvalues>
+					<attvalue for="0" value="ĖĮŠŲŪ()"/>
+				</attvalues>
+			</node>
+		</nodes>
+		<edges count="2">
+			<edge id="0" source="0" target="1" type="undirected"/>
+			<edge id="1" source="1" target="0" type="undirected"/>
+		</edges>
+	</graph>
+</gexf>
