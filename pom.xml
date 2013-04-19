@@ -2,11 +2,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <groupId>it.uniroma1.dis.wiserver.gexf4j</groupId>
+    <groupId>it.uniroma1.dis.wsngroup.gexf4j</groupId>
     <artifactId>gexf4j</artifactId>
-    <version>0.4.1-BETA</version>
+    <version>0.4.1-BETA-SNAPSHOT</version>
+    <packaging>jar</packaging>
     
     <name>gexf4j</name>
+    <description>This library is used to create and write GEXF files for visualizing graphs using Gephi and any other GEXF-supporting application.</description>
+    <url>https://github.com/francesco-ficarola/gexf4j</url>
+    
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:francesco-ficarola/gexf4j.git</url>
+        <connection>scm:git:git@github.com:francesco-ficarola/gexf4j.git</connection>
+        <developerConnection>scm:git:git@github.com:francesco-ficarola/gexf4j.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>francesco-ficarola</id>
+            <name>Francesco Ficarola</name>
+            <email>ficarola@dis.uniroma1.it</email>
+        </developer>
+    </developers>
     
     <properties>
         <jdkLevel>1.6</jdkLevel>
@@ -25,6 +53,19 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     
@@ -36,7 +77,7 @@
         </dependency>
         <dependency>
             <groupId>org.codehaus.woodstox</groupId>
-            <artifactId>wstx-asl</artifactId>
+            <artifactId>woodstox-core-asl</artifactId>
             <version>4.0.6</version>
         </dependency>
         <dependency>
