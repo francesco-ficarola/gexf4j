@@ -4,7 +4,7 @@
     
     <groupId>it.uniroma1.dis.wiserver.gexf4j</groupId>
     <artifactId>gexf4j</artifactId>
-    <version>0.4.0-BETA</version>
+    <version>0.4.1-BETA</version>
     
     <name>gexf4j</name>
     
@@ -32,16 +32,18 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>r06</version>
-            <type>jar</type>
-            <scope>compile</scope>
+            <version>11.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.woodstox</groupId>
             <artifactId>wstx-asl</artifactId>
             <version>4.0.6</version>
         </dependency>
-            
+        <dependency>
+            <groupId>org.codehaus.woodstox</groupId>
+            <artifactId>stax2-api</artifactId>
+            <version>3.1.1</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

@@ -1,11 +1,17 @@
 gexf4j - A java library for the GEXF file format
 =================
 
-Latest Version: [0.4.0-BETA](http://github.com/francesco-ficarola/gexf4j)
+Latest Version: **0.4.1-BETA**
+
+Author: *Francesco Ficarola*
+
+Tests Author: *Tadas Subonis*
+
+v0.2 Author: *Javier Campanini*
 
 About
 ------------------
-GEXF File Format Java Library. Supports [GEXF 1.2](http://gexf.net/format/index.html). This library is used to create and write GEXF Files for visualizing graphs using Gephi and any other GEXF-supporting application.
+GEXF File Format Java Library. It supports [GEXF 1.2](http://gexf.net/format/index.html). This library is used to create and write GEXF files for visualizing graphs using Gephi and any other GEXF-supporting application.
 Versions up to [0.2.0](https://github.com/jmcampanini/gexf4j-core) are mantained by Javier Campanini, under the Apache License, Version 2.0. The new version 0.3.0 and later will be maintained by Francesco Ficarola, under the same license. 
 
 License
@@ -17,6 +23,11 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Version 0.4.1 - BETA (by Francesco Ficarola)
+------------------
+
+All libraries were added into the pom.xml as maven dependencies.
 
 Version 0.4.0 - BETA (pull request by dankeris)
 ------------------
@@ -73,30 +84,17 @@ The underlying API has changed dramatically. Gexf4j now supports the entire GEXF
 
 Installing
 ------------------
-You have two options:
-
-1. (Recommended) Clone the repository and compile/install using maven2:
 
 	$ git clone https://github.com/francesco-ficarola/gexf4j.git
 
 	$ mvn clean package
 
-2. Download the latest version of the JAR file from the [download page](https://github.com/francesco-ficarola/gexf4j/downloads)
-
-Dependecies
-------------------
-If you have downloaded the gexf4j JAR file, then you need some dependencies:
-
-* [guava](http://code.google.com/p/guava-libraries/)
-* [woodstox](http://wiki.fasterxml.com/WoodstoxDownload)
-* [stax](http://www.jarvana.com/jarvana/archive-details/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar)
-
-Otherwise, if you have cloned the respository and have builded the gexf4j library by Maven, then you can find a "ready-to-use" version of those libraries in the lib directory.
-
 Sample Code
 ------------------
-In the following examples you can learn how to build a GEXF graph by the gexf4j library:
+In the following paths:
 
-* The [StaticGexfGraph.java](https://github.com/francesco-ficarola/gexf4j/blob/master/src/examples/java/it/uniroma1/dis/wiserver/gexf4j/examples/StaticGexfGraph.java) produces [this static graph](https://github.com/downloads/francesco-ficarola/gexf4j/static_graph_sample.gexf)
+* src/examples/java
+* src/test/java
+* src/test/resources
 
-* The [DynamicGexfGraph.java](https://github.com/francesco-ficarola/gexf4j/blob/master/src/examples/java/it/uniroma1/dis/wiserver/gexf4j/examples/DynamicGexfGraph.java) produces [this dynamic graph](https://github.com/downloads/francesco-ficarola/gexf4j/dynamic_graph_sample.gexf)
+you can find some example code (and resulting output files) that shows how to build GEXF graphs by using the gexf4j library.
