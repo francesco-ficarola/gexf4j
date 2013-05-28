@@ -4,6 +4,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
 
 import it.uniroma1.dis.wsngroup.gexf4j.core.Edge;
+import it.uniroma1.dis.wsngroup.gexf4j.core.EdgeType;
 import it.uniroma1.dis.wsngroup.gexf4j.core.Node;
 import it.uniroma1.dis.wsngroup.gexf4j.core.impl.viz.NodeShapeImpl;
 import it.uniroma1.dis.wsngroup.gexf4j.core.viz.Color;
@@ -225,6 +226,21 @@ public class NodeImpl extends SpellableDatumBase<Node> implements Node {
 
         Edge rv = new EdgeImpl(id, this, target);
         rv.setLabel(label);
+        edges.add(rv);
+        return rv;
+    }
+
+    @Override
+    public Edge connectTo(String id, String label, EdgeType edgeType, Node target) {
+        checkArgument(id != null, "ID cannot be null.");
+        checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
+        checkArgument(label != null, "label cannot be null.");
+        checkArgument(edgeType != null, "edgeType cannot be null.");
+        checkArgument(target != null, "Target cannot be null.");
+        checkArgument(!hasEdgeTo(target.getId()), "Edge already exists.");
+
+        Edge rv = new EdgeImpl(id, this, target);
+        rv.setLabel(label).setEdgeType(edgeType);
         edges.add(rv);
         return rv;
     }
