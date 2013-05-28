@@ -214,7 +214,21 @@ public class NodeImpl extends SpellableDatumBase<Node> implements Node {
 		edges.add(rv);
 		return rv;
 	}
-	
+
+    @Override
+    public Edge connectTo(String id, String label, Node target) {
+        checkArgument(id != null, "ID cannot be null.");
+        checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
+        checkArgument(label != null, "label cannot be null.");
+        checkArgument(target != null, "Target cannot be null.");
+        checkArgument(!hasEdgeTo(target.getId()), "Edge already exists.");
+
+        Edge rv = new EdgeImpl(id, this, target);
+        rv.setLabel(label);
+        edges.add(rv);
+        return rv;
+    }
+
 	@Override
 	public boolean hasEdgeTo(String id) {
 		checkArgument(id != null, "ID cannot be null.");
