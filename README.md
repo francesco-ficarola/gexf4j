@@ -1,11 +1,13 @@
 gexf4j - A java library for the GEXF file format
 =================
 
-Latest Version: **0.4.2-BETA**
+Latest Version: **0.4.3-BETA**
 
 Author: *Francesco Ficarola*
 
 Tests Author: *Tadas Subonis*
+
+Co-Authors: *Tadas Subonis*, *Justin Harris*
 
 v0.2 Author: *Javier Campanini*
 
@@ -23,6 +25,14 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+Version 0.4.3 - BETA (pull request by juharris)
+------------------
+
+The following changes have been applied:
+
+* Added the ability to set a label for an edge.
+* Added setting the edge type in connectTo
 
 Version 0.4.2 - BETA (by Francesco Ficarola)
 ------------------
