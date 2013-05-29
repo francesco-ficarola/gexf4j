@@ -1,7 +1,7 @@
 gexf4j - A java library for the GEXF file format
 =================
 
-Latest Version: **0.4.2-BETA**
+Latest Version: **0.4.4-BETA**
 
 Author: *Francesco Ficarola*
 
