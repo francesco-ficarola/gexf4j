@@ -53,22 +53,22 @@ public interface Node extends SpellableDatum<Node>, HasNodes {
 	Edge connectTo(String id, Node target);
 
 	/**
-     * Creates an Edge with a particular ID and label between this Node and the target Node
-     * @param id the ID of the Edge
-     * @param label the label of the Edge
-     * @param target the target Node of the Edge
-     * @return the built Edge
-     */
+	 * Creates an Edge with a particular ID and label between this Node and the target Node
+	 * @param id the ID of the Edge
+	 * @param label the label of the Edge
+	 * @param target the target Node of the Edge
+	 * @return the built Edge
+	 */
 	Edge connectTo(String id, String label, Node target);
 
 	/**
-     * Creates an Edge with a particular ID and label between this Node and the target Node
-     * @param id the ID of the Edge
-     * @param label the label of the Edge
-     * @param edgeType the edgeType of the Edge
-     * @param target the target Node of the Edge
-     * @return the built Edge
-     */
+	 * Creates an Edge with a particular ID and label between this Node and the target Node
+	 * @param id the ID of the Edge
+	 * @param label the label of the Edge
+	 * @param edgeType the edgeType of the Edge
+	 * @param target the target Node of the Edge
+	 * @return the built Edge
+	 */
 	Edge connectTo(String id, String label, EdgeType edgeType, Node target);
 
 	/**

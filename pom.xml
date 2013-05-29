@@ -4,7 +4,7 @@
     
     <groupId>it.uniroma1.dis.wsngroup.gexf4j</groupId>
     <artifactId>gexf4j</artifactId>
-    <version>0.4.4-BETA-SNAPSHOT</version>
+    <version>0.4.3-BETA-SNAPSHOT</version>
     <packaging>jar</packaging>
     
     <name>gexf4j</name>
@@ -33,11 +33,6 @@
             <id>francesco-ficarola</id>
             <name>Francesco Ficarola</name>
             <email>ficarola@dis.uniroma1.it</email>
-        </developer>
-        <developer>
-            <id>justin-harris</id>
-            <name>Justin Harris</name>
-            <email>justindharris@gmail.com</email>
         </developer>
     </developers>
     
@@ -78,7 +73,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>14.0.1</version>
+            <version>11.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.woodstox</groupId>
