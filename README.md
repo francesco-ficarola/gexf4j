@@ -26,6 +26,42 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
+Using gexf4j in Maven projects (Recommended)
+------------------
+
+Enter in your pom.xml file the latest gexf4j dependency information: [Maven Central](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22it.uniroma1.dis.wsngroup.gexf4j%22%20AND%20a%3A%22gexf4j%22)
+
+Using gexf4j in not-Maven projects
+------------------
+
+If you don't want to build a maven project, you can use the gexf4j library as a jar file in your project, but you also need to link the following dependencies:
+
+* guava-11.0.2.jar
+* woodstox-core-asl-4.0.6.jar
+* stax2-api-3.1.1.jar
+* junit-4.10.jar
+* xmlunit-1.3.jar
+* commons-io-2.4.jar
+
+Run the following commands to compile and package gexf4j:
+
+	$ git clone https://github.com/francesco-ficarola/gexf4j.git
+	$ mvn clean package
+
+If everything is fine, you will find the jar file in the target/ directory.
+
+Now you can use the gex4j library (and all its dependencies) in your Java project. If you use a GNU/Linux distribution, you may find all dependencies in the ~/.m2/repository/ path.
+
+Sample Code
+------------------
+In the following paths:
+
+* src/examples/java
+* src/test/java
+* src/test/resources
+
+you can find some example code (and resulting output files) that shows how to build GEXF graphs by using the gexf4j library.
+
 Version 0.4.3 - BETA (pull request by juharris)
 ------------------
 
@@ -99,23 +135,3 @@ The underlying API has changed dramatically. Gexf4j now supports the entire GEXF
 * Hierarchy
 * Phylogeny
 * Visualization
-
-Installing
-------------------
-
-Run the following commands to compile and package gexf4j:
-
-	$ git clone https://github.com/francesco-ficarola/gexf4j.git
-	$ mvn clean package
-
-If everything is fine, you will find the jar file in the target/ directory.
-
-Sample Code
-------------------
-In the following paths:
-
-* src/examples/java
-* src/test/java
-* src/test/resources
-
-you can find some example code (and resulting output files) that shows how to build GEXF graphs by using the gexf4j library.
