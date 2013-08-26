@@ -1,7 +1,7 @@
 gexf4j - A java library for the GEXF file format
 =================
 
-Latest Version: **0.4.3-BETA**
+Latest Version: **0.4.4-BETA**
 
 Author: *Francesco Ficarola*
 
@@ -18,7 +18,7 @@ Versions up to [0.2.0](https://github.com/jmcampanini/gexf4j-core) are mantained
 
 License
 ------------------
-Copyright [2012] [Francesco Ficarola]
+Copyright 2012 Francesco Ficarola
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
@@ -61,6 +61,15 @@ In the following paths:
 * src/test/resources
 
 you can find some example code (and resulting output files) that shows how to build GEXF graphs by using the gexf4j library.
+
+Version 0.4.4 - BETA (by Francesco Ficarola)
+------------------
+
+The following changes have been applied:
+
+* Bug fix: node shape URI, [link issue](https://github.com/francesco-ficarola/gexf4j/issues/9)
+* Bug fix: node shape name ("node-shape" is now "shape")
+* StaticGexfGraph.java has been updated with some viz code.
 
 Version 0.4.3 - BETA (pull request by juharris)
 ------------------
