@@ -12,6 +12,7 @@ import it.uniroma1.dis.wsngroup.gexf4j.core.data.AttributeType;
 import it.uniroma1.dis.wsngroup.gexf4j.core.impl.GexfImpl;
 import it.uniroma1.dis.wsngroup.gexf4j.core.impl.StaxGraphWriter;
 import it.uniroma1.dis.wsngroup.gexf4j.core.impl.data.AttributeListImpl;
+import it.uniroma1.dis.wsngroup.gexf4j.core.viz.NodeShape;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -30,6 +31,7 @@ public class StaticGexfGraph {
 			.setLastModified(date.getTime())
 			.setCreator("Gephi.org")
 			.setDescription("A Web network");
+		gexf.setVisualization(true);
 
 		Graph graph = gexf.getGraph();
 		graph.setDefaultEdgeType(EdgeType.UNDIRECTED).setMode(Mode.STATIC);
@@ -46,9 +48,11 @@ public class StaticGexfGraph {
 		Node gephi = graph.createNode("0");
 		gephi
 			.setLabel("Gephi")
+			.setSize(20)
 			.getAttributeValues()
 				.addValue(attUrl, "http://gephi.org")
 				.addValue(attIndegree, "1");
+		gephi.getShapeEntity().setNodeShape(NodeShape.DIAMOND).setUri("GephiURI");
 		
 		Node webatlas = graph.createNode("1");
 		webatlas

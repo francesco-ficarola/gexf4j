@@ -50,6 +50,7 @@ public class NodeShapeImpl implements NodeShapeEntity {
 	@Override
 	public NodeShapeEntity setUri(String uri) {
 		checkArgument(uri != null, "URI cannot be set to null.");
+		this.uri = uri;
 		return this;
 	}
 }

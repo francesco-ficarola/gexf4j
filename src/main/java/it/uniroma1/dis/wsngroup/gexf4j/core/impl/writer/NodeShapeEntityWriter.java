@@ -7,7 +7,7 @@ import javax.xml.stream.XMLStreamWriter;
 
 
 public class NodeShapeEntityWriter extends AbstractEntityWriter<NodeShapeEntity> {
-	private static final String ENTITY = "viz:node-shape";
+	private static final String ENTITY = "viz:shape";
 	private static final String ATTRIB_VALUE = "value";
 	private static final String ATTRIB_URI = "uri";
 	
