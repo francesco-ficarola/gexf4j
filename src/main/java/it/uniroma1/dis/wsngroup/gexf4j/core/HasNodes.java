@@ -24,6 +24,12 @@ public interface HasNodes {
 	List<Node> getNodes();
 	
 	/**
+	 * Return a specific node
+	 * @return the node with the specified ID
+	 */
+	Node getNode(String id);
+	
+	/**
 	 * Returns the list of all the Edges
 	 * @return the list of all the Edges
 	 */

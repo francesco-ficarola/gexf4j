@@ -278,6 +278,18 @@ public class NodeImpl extends SpellableDatumBase<Node> implements Node {
 	public List<Node> getNodes() {
 		return nodes;
 	}
+	
+	@Override
+	public Node getNode(String id) {
+		checkArgument(id != null, "ID cannot be null.");
+		checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
+		for(Node node : getNodes()) {
+			if(node.getId().equals(id)) {
+				return node;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public List<Edge> getAllEdges() {

@@ -117,6 +117,18 @@ public class GraphImpl extends DynamicBase<Graph> implements Graph {
 	public List<Node> getNodes() {
 		return nodes;
 	}
+	
+	@Override
+	public Node getNode(String id) {
+		checkArgument(id != null, "ID cannot be null.");
+		checkArgument(!id.trim().isEmpty(), "ID cannot be empty or blank.");
+		for(Node node : nodes) {
+			if(node.getId().equals(id)) {
+				return node;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public List<AttributeList> getAttributeLists() {
