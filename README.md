@@ -1,7 +1,7 @@
 gexf4j - A java library for the GEXF file format
 =================
 
-Latest Version: **0.4.4-BETA**
+Latest Version: **1.0.0**
 
 Author: *Francesco Ficarola*
 
@@ -36,11 +36,10 @@ Using gexf4j in not-Maven projects
 
 If you don't want to build a maven project, you can use the gexf4j library as a jar file in your project, but you also need to link the following dependencies:
 
-* guava-11.0.2.jar
-* woodstox-core-asl-4.0.6.jar
-* stax2-api-3.1.1.jar
-* junit-4.10.jar
-* xmlunit-1.3.jar
+* guava-18.0.jar
+* woodstox-core-asl-4.4.1.jar
+* junit-4.12.jar
+* xmlunit-1.6.jar
 * commons-io-2.4.jar
 
 Run the following commands to compile and package gexf4j:
@@ -61,6 +60,14 @@ In the following paths:
 * src/test/resources
 
 you can find some example code (and resulting output files) that shows how to build GEXF graphs by using the gexf4j library.
+
+Version 1.0.0 (by Francesco Ficarola)
+------------------
+
+The following changes have been applied:
+
+* The "getNode(String id)" method has been added, [link issue](https://github.com/francesco-ficarola/gexf4j/issues/18)
+* XML output files are now formatted in pretty printing mode, [link issue](https://github.com/francesco-ficarola/gexf4j/issues/16)
 
 Version 0.4.4 - BETA (by Francesco Ficarola)
 ------------------
