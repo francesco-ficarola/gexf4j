@@ -4,7 +4,7 @@
     
     <groupId>it.uniroma1.dis.wsngroup.gexf4j</groupId>
     <artifactId>gexf4j</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     
     <name>gexf4j</name>
