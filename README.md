@@ -14,7 +14,7 @@ v0.2 Author: *Javier Campanini*
 About
 ------------------
 GEXF File Format Java Library. It supports [GEXF 1.2](http://gexf.net/format/index.html). This library is used to create and write GEXF files for visualizing graphs using Gephi and any other GEXF-supporting application.
-Versions up to [0.2.0](https://github.com/jmcampanini/gexf4j-core) are mantained by Javier Campanini, under the Apache License, Version 2.0. The new version 0.3.0 and later will be maintained by Francesco Ficarola, under the same license. 
+Versions up to [0.2.0](https://github.com/jmcampanini/gexf4j-core) are maintained by Javier Campanini, under the Apache License, Version 2.0. The new version 0.3.0 and later will be maintained by Francesco Ficarola, under the same license. 
 
 License
 ------------------
@@ -104,7 +104,7 @@ Version 0.4.0 - BETA (pull request by dankeris)
 The following changes have been applied:
 
 * Unit tests have been included
-* STAX impementation has been changed from JDK default to woodstox
+* STAX implementation has been changed from JDK default to woodstox
 * Stream writing has been added for convenience
 
 Additional changes:
